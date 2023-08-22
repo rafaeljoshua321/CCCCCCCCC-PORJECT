@@ -1,0 +1,31 @@
+//* RAFAEL JOSHUA ALFAFARA //*
+//* BSIT - 2 //*
+
+#include <stdio.h>
+#include <stdlib.h>
+
+void main(){
+	int size, loopVar, search;
+	int found = 0, pos = 0;
+	
+	printf("Enter size of the array: ");
+	scanf("%d", &size);
+	
+	int array[size];
+	
+	for (loopVar = 0; loopVar < size; loopVar++){
+		printf("Num %d: ", loopVar+1);
+		scanf("%d", &array[loopVar]);
+	}
+	printf("\n\nEnter the number to search: ");
+	scanf("%d", &search);
+	
+	for (loopVar = 0; loopVar < size; loopVar++){
+		if (search == array[loopVar]){
+				found = 1;
+				pos = loopVar+1;
+				break;
+		}
+	}
+	found == 1 ? printf("\n%d found at position %d", search, pos) : printf("\nNumber not in the array");
+}
